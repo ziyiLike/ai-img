@@ -22,6 +22,9 @@ const form = ref<any>({})
 const handleSubmit = () => {
   localStorage.setItem('settings', JSON.stringify(form.value))
   show.value = false
+  nextTick(() => {
+    location.reload()
+  })
 }
 
 defineExpose({

@@ -163,6 +163,9 @@ const genImageRequest = (prompt: string, seed = parseInt(useGetRandom(10, '12345
       assistantMessageImg.value.imgPrompt = prompt
       assistantMessageImg.value.seed = seed
     },
+    onError(err) {
+      assistantMessageImg.value.error = err.response.data.message
+    },
     onFinally() {
       assistantMessageImg.value.loading = false
     },
